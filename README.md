@@ -117,6 +117,18 @@ var clear=setInterval(function() //la fiecare 1 secunda modifica ora
     - [x] proprietati
    - [x] target
 ````
+if(event.target==radio2)//daca targetul inital a fost radio2 culoarea devine un mov deschis
+        {
+            section.style.backgroundColor="rgb(226, 209, 255)";
+        }
+        else if(event.target==radio3)//daca targetul initial a fost radio3 culoarea devine un mov mai inchis
+        {
+            section.style.backgroundColor="rgb(170, 120, 255)";
+        }
+        else if(event.target==section)//daca targetul inital a fost chear sectiunea se coloreaza la fel
+        {
+            section.style.backgroundColor="rgb(132, 66, 245)";
+        }
 ````
    - [x] key
  ````
