@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Submission page</title>
+    </head>
+
+    <body>
+        <header class="parallax">
+            <div class="header-section">
+                <h1>Happiness starts here!</h1>
+            </div>
+        </header>
+
+        <div id="loged-box">
+            <p id="ora"> </p>
+            <p id="box-username"></p>
+            <p id="logout">logout</p>
+        </div>
+
+
+        <nav class="nav-wrapper">
+            <ul class="left-side">
+                <li class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-link-wrapper">
+                    <a href="blog.html">Blog</a>
+                </li>
+                <li class="nav-link-wrapper" id="order">
+                    <a href="order.html">Order</a>
+                    <ul>
+                        <li><a href="">Spices</a></li>
+                        <li><a href="">Meal boxes</a></li>
+                        <li><a href="">Merchandise</a></li>
+                    </ul>
+                </li>
+                <li class="nav-link-wrapper">
+                    <a href="about_us.html">About us</a>
+                </li>
+            </ul>
+            <ul class="right-side">
+                <li class="user">
+                    <a href="submit.html">Submit your recipe</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="form">
+            <h3>Sign in</h3>
+            <div class="thumbnail">
+                <img src="chef-icon.png" alt="chef icon">
+            </div>
+            <div class="register-form">
+                <input type="text" placeholder="username" id="username">
+                <input type="text" placeholder="password" id="parola">
+                <button>login</button>
+                <p id="adaugare_mail" class="account_specifier">I don't have an account</p>
+                <p id="sterge_mail" class="account_specifier">I already have an account</p>
+            </div>
+        </section>
+        <section id="selectare">
+            <p>Selectati o optiune:</p>
+            <input type="radio" class="u free" value="free" name="selectie"><label for="free"><button class="free">free</button></label><br><br>
+            <input type="radio" class="u pass" value="pass"name="selectie"><label for="pass"><button class="passionate">passionate</button></label><br><br>
+            <input type="radio" class="u chef" value="chef"name="selectie"><label for="chef"><button class="chef">chef</button></label><br>
+        </section>
+        <a id="call" href="https://www.youtube.com/watch?v=xwKGZS3EE7Q">Join the weekly call with our chefs!</a>
+        <table>
+            <tr>
+                <th>Upgrade your account subscription and become one of our chefs</th>
+                <th>Basic</th>
+                <th>Passionate</th>
+                <th>Chef</th>
+            </tr>
+            <tr>
+                <td>Acess our weekly newsletter</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td>Comment on our weekly recipes</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td>Submit your own recipe</td>
+                <td>✘</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td>Get access to our weekly chef meetings and get to know incredible people</td>
+                <td>✘</td>
+                <td>✘</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Free</td>
+                <td id="price1">10$/year</td>
+                <td id="price2">50$/year</td>
+            </tr>
+        </table>
+        <script src="script.js"></script>
+    </body>
+    
+</html>

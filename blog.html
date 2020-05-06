@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viweport" content="width=device-width, initial-scale=1.0">
+        <title>Blog</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+        <script src="script_blog.js"></script>
+    </head>
+
+    <body>
+        <header class="parallax">
+            <div class="header-section">
+                <h1>Happiness starts here!</h1>
+            </div>
+        </header>
+        <nav class="nav-wrapper">
+            <ul class="left-side">
+                <li class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-link-wrapper">
+                    <a href="blog.html">Blog</a>
+                </li>
+                <li class="nav-link-wrapper" id="order">
+                    <a href="order.html">Order</a>
+                    <ul>
+                        <li><a href="">Spices</a></li>
+                        <li><a href="">Meal boxes</a></li>
+                        <li><a href="">Merchandise</a></li>
+                    </ul>
+                </li>
+                <li class="nav-link-wrapper">
+                    <a href="about_us.html">About us</a>
+                </li>
+                <li class="nav-link-wrapper">
+                    <button id="modal-button">open color picker</button>
+                    <div class="modal" id="modal">
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                Color picker
+                            </div>
+                            <button id="modal-close-button">&times</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Select a red color with a click, then mix and mach your desired shade by clicking the square!</p>
+                            <div id="container_patrat">
+                                <p>(GREEN, BLUE) :</p>
+                                <div id="patrat"></div>
+                            </div>
+                            <div id="container_rosu">
+                                    <p>RED:</p>
+                                    <div id="rosu"></div>
+                            </div>
+                            <p>Ready to change the theme of the blog?</p>
+                            <button id="YES">YES</button>
+                        </div>
+                    </div>
+                    <div id="overlay" class="active"></div>
+            </ul>
+            <ul class="right-side">
+                <li class="user">
+                    <a href="submit.html">Submit your recipe</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container-blog">
+            <figure class="box">
+                <figcaption>
+                    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=653&q=80"
+                        alt="food">
+                    <div class="heart">❤</div>
+                    <h2>Greek-Style Baked Cod with Lemon and Garlic</h2>
+                    <p>There is a reason this baked cod recipe has been the #1 most cooked and enjoyed recipe on the
+                        blog
+                        for some time! A handful of Mediterranean spices, plus a mixture of lemon juice, olive oil, and
+                        garlic, give it glorious flavors! Comes together in just over 20 mins.</p>
+                </figcaption>
+            </figure>
+            <figure class="box">
+                <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=687&q=80"
+                    alt="food">
+                <figcaption>
+                    <div class="heart">❤</div>
+                    <h2>Buffalo chicken</h2>
+                    <p>These spicy wings are ideal party food for any celebration. The chicken is brined to make it
+                        extra juicy and the smoky sweetness of the sauce adds heat </p>
+                    
+                </figcaption>
+            </figure>
+            <figure class="box">
+                <img src="blogimages/image4.jpg" alt="food">
+                <figcaption>
+                    <div class="heart">❤</div>
+                    <h2>Flatbread Pizza</h2>
+                    <p>Homemade pizza is super-delicious, but it takes a bit of time and special attention. These
+                        flatbread
+                        pizzas come together MUCH faster, and they're just as cheesy and flavorful as the classic
+                        version.
+                        We love topping ours with tomatoes and arugula when they're in season, but if you're making them
+                        in
+                        the winter, try them topped with root veggies like roasted brussels sprouts or roasted carrots
+                        instead!</p>
+                </figcaption>
+            </figure>
+            <figure class="box">
+                <img src="portfolio1.jpg" alt="food">
+                <figcaption>
+                    <h2>Dan Dan Noodles</h2>
+                    <p>Homemade pizza is super-delicious, but it takes a bit of time and special attention. These
+                        flatbread
+                        pizzas come together MUCH faster, and they're just as cheesy and flavorful as the classic
+                        version.
+                    </p>
+                    <aside>We love topping ours with tomatoes and arugula when they're in season, but if you're making
+                        them
+                        in
+                        the winter, try them topped with root veggies like roasted brussels sprouts or roasted carrots
+                        instead!
+                    </aside>
+
+                </figcaption>
+            </figure>
+            <figure class="box">
+                <img src="portfolio1.jpg" alt="food">
+                <figcaption>
+                    <h2>Title</h2>
+                    <p>Can't find Chinese black vinegar in your local grocery store? No problem! Instead, use a mixture
+                        of 3
+                        tbsp. water, 1 tbsp. balsamic vinegar, and 1 tbsp. rice wine vinegar. Whisk those three
+                        ingredients
+                        together, then measure out the amount called for in the recipe below.</p>
+                </figcaption>
+            </figure>
+            <figure class="box">
+                <img src="portfolio1.jpg" alt="food">
+                <figcaption>
+                    <h2>Title</h2>
+                    <p>She patiently waited for his number to be called. She had no desire to be there, but her mom had
+                        insisted that she go. She's resisted at first, but over time she realized it was simply easier
+                        to
+                        appease her and go. Mom tended to be that way. She would keep insisting until you wore down and
+                        did
+                        what she wanted. So, here she sat, patiently waiting for her number to be called.</p>
+                </figcaption>
+            </figure>
+            <figure class="box">
+                <img src="portfolio1.jpg" alt="food">
+                <figcaption>
+                    <h2>Title</h2>
+                    <p>She patiently waited for his number to be called. She had no desire to be there, but her mom had
+                        insisted that she go. She's resisted at first, but over time she realized it was simply easier
+                        to
+                        appease her and go. Mom tended to be that way. She would keep insisting until you wore down and
+                        did
+                        what she wanted. So, here she sat, patiently waiting for her number to be called.</p>
+                </figcaption>
+            </figure>
+            <figure class="box">
+                <img src="portfolio1.jpg" alt="food">
+                <figcaption>
+                    <h2>Title</h2>
+                    <p>She patiently waited for his number to be called. She had no desire to be there, but her mom had
+                        insisted that she go. She's resisted at first, but over time she realized it was simply easier
+                        to
+                        appease her and go. Mom tended to be that way. She would keep insisting until you wore down and
+                        did
+                        what she wanted. So, here she sat, patiently waiting for her number to be called.</p>
+                </figcaption>
+            </figure>
+            <figure class="box">
+                <img src="portfolio1.jpg" alt="food">
+                <figcaption>
+                    <h2>Title</h2>
+                    <p>She patiently waited for his number to be called. She had no desire to be there, but her mom had
+                        insisted that she go. She's resisted at first, but over time she realized it was simply easier
+                        to
+                        appease her and go. Mom tended to be that way. She would keep insisting until you wore down and
+                        did
+                        what she wanted. So, here she sat, patiently waiting for her number to be called.</p>
+                </figcaption>
+            </figure>
+            <figure class="box">
+                <img src="portfolio1.jpg" alt="food">
+                <figcaption>
+                    <h2>Title</h2>
+                    <p>She patiently waited for his number to be called. She had no desire to be there, but her mom had
+                        insisted that she go. She's resisted at first, but over time she realized it was simply easier
+                        to
+                        appease her and go. Mom tended to be that way. She would keep insisting until you wore down and
+                        did
+                        what she wanted. So, here she sat, patiently waiting for her number to be called.</p>
+                </figcaption>
+            </figure>
+            <figure class="box">
+                <img src="portfolio1.jpg" alt="food">
+                <figcaption>
+                    <h2>Title</h2>
+                    <p>She patiently waited for his number to be called. She had no desire to be there, but her mom had
+                        insisted that she go. She's resisted at first, but over time she realized it was simply easier
+                        to
+                        appease her and go. Mom tended to be that way. She would keep insisting until you wore down and
+                        did
+                        what she wanted. So, here she sat, patiently waiting for her number to be called.</p>
+                </figcaption>
+            </figure>
+            <figure class="box">
+                <img src="portfolio1.jpg" alt="food">
+                <figcaption>
+                    <h2>Title</h2>
+                    <p>She patiently waited for his number to be called. She had no desire to be there, but her mom had
+                        insisted that she go. She's resisted at first, but over time she realized it was simply easier
+                        to
+                        appease her and go. Mom tended to be that way. She would keep insisting until you wore down and
+                        did
+                        what she wanted. So, here she sat, patiently waiting for her number to be called.</p>
+                </figcaption>
+            </figure>
+            <figure class="box">
+                <img src="blogimages/image2.jpg" alt="food">
+                <figcaption>
+                    <h2>Easy Seafood Paella</h2>
+                    <p>A modern and easy version of seafood paella with shrimp and lobster. You’ll love this rice dish.
+                        And
+                        no special paella pan needed! Step-by-step tutorial and video included with the recipe.</p>
+                </figcaption>
+            </figure>
+        </div>
+    </body>
+
+</html>
