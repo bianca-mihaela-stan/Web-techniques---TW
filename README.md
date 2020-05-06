@@ -49,6 +49,7 @@ var caseta=document.getElementById("checkbox").checked;
 
 - [x] className
 ````
+var b = document.getElementsByClassName(a.className)[1];//"am deja cont"
 ````
 - [x] classList
 ````
