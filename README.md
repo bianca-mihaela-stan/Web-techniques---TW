@@ -1,5 +1,5 @@
 # Site-TW
- 
+
 ### Partea de JS
 
 ## BAZA
@@ -65,17 +65,17 @@ var hpatrat=window.getComputedStyle(patrat).height;
 ````
 x=Math.ceil((255*x)/wpatrat);
 ````
-     
+
  - [x] Array
  ````    
 lista_clienti.push(ob);
-````
+ ````
 - [x] String
  ````
  if (txt.value.indexOf('@') == -1) {
                 adaugare_avertizare_mail(txt, input_corect);
             }
-````
+ ````
 - [x] Date
  ````
  var today = new Date();
@@ -90,7 +90,7 @@ var min=String(time.getMinutes());
 var sec=String(time.getSeconds());
 
 time=hh+ ":" + min + ":" + sec;
-````
+ ````
 - [x] setInterval(cu cel putin 3 parametrii) , clearInterval
 ````
 var clear=setInterval(function() //la fiecare 1 secunda modifica ora
@@ -145,7 +145,7 @@ if(event.target==radio2)//daca targetul inital a fost radio2 culoarea devine un 
         }
 
     })
-````
+ ````
    - [x] pageX
 ````
  var x=event.pageX;
@@ -154,7 +154,7 @@ if(event.target==radio2)//daca targetul inital a fost radio2 culoarea devine un 
         - [x] stopPropagation
  ````
  event.stopPropagation();//il opresc din a face bubble
-````
+ ````
    - [x] preventDefault
 ````
 if(apasat==0)//daca nu e apasat radio3 nu este permis accesul la link-ul initial
@@ -233,7 +233,7 @@ function client(mail, username, parola)
 var text=b.parentNode.parentNode.firstChild.nextSibling;//navigare in arbore
 ````
 - [x] window- open, close
-````
+````js
 home=window.open("index.html", "HOME", "width=300,height=300");
  home.close();
 ````

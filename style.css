@@ -138,7 +138,7 @@ li:hover{
 }
 ul li ul{
     min-width: 5rem;
-    position:absolute;
+    position:absolute;/*daca nu puneam asta se marea dimensiunea meniului pentru ca se incadra in parinte*/
     transition: all 0.5s ease;
     background: white;
     visibility: hidden;
@@ -263,24 +263,22 @@ ul li ul li:hover{
 
 
 /*-------------BLOG.HTML------*/
-.container-blog{
-    padding:4%;
-    width: 90%;
-    margin-top: 0px;
-    padding-top:0%;
-    column-count: 4;
-    column-gap: 5%;
-
+.container-blog
+{
+    width: 100%;
+    margin: 0;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .container-blog .box{
-    width:100%;
-    margin: 0 0 3vh;
-    padding:10px;
+    margin:10px;
+    padding: 10px;
     background: rgb(215, 244, 247);
-    break-inside: avoid;/* ca sa nu se fupa imaginea de descriere*/
+    break-inside: avoid;/* ca sa nu se rupa imaginea de descriere*/
 }
 .container-blog .box img{
-    max-width:100%;
+    width:100%;
 }
 .container-blog .box h2{
     margin:1vh 0 0;
@@ -300,7 +298,21 @@ aside
     box-shadow: inset 5px 0 5px -5px #3b9bf5;
 }
 
+.container-blog button
+{
+    /* background-color:rgb(46, 116, 160); */
+    background-color: rgb(160, 216, 223);
+    color: rgb(23, 94, 151);
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    width: auto;
+}
 
+canvas
+{
+    display: none;
+}
 
 
 
@@ -425,22 +437,22 @@ table td
 
 
 
-/*--------------Media query------*/
-@media (max-width:1200px)
+/* --------------Media query------ */
+/* @media (max-width:1200px)
 {
     .container-blog{
         columns: 3;
         width: calc(100% - 40px);
-        box-sizing: border-box;
-        padding: 20px 20px;
+        box-sizing: border-box;*//*face toti copiii sa se incadreze in parinte*/
+        /* padding: 20px 20px;
     }
     .items-wrapper
     {
         grid-template-columns: 1fr 1fr 1fr;
     }
-}
+}  */
 
-@media (max-width:768px)
+/* @media (max-width:768px)
 {
     .container-blog{
         columns: 2;
@@ -452,8 +464,8 @@ table td
     {
         grid-template-columns: 1fr 1fr;
     }
-}
-@media (max-width:500px)
+} */
+/* @media (max-width:500px)
 {
     .container-blog{
         columns: 1;
@@ -462,7 +474,7 @@ table td
     {
         grid-template-columns: 1fr;
     }
-}
+} */
 
 
 
@@ -515,12 +527,12 @@ table td
     padding-left: 1em;
 }
 
-#modal-close-button
+.modal-buttons
 {
     cursor: pointer;
     background: none;
     outline: none;
-    padding: 2vh 3vh 2vh 0;
+    padding: 2vh 1vh 2vh 0;
     margin: 0;
     width: 1vh;
     color: black;
@@ -645,3 +657,196 @@ table td
     display:none;
 }
 
+
+.sort-buttons
+{
+    width: auto;
+    background-color: white;
+    color: grey;
+    display: inline;
+    font-size: 0.9em;
+}
+
+#sort
+{
+    display: flex;
+    float:right;
+}
+
+#sort p
+{
+    font-size: 0.9em;
+}
+.sort-buttons:nth-of-type(4)
+{
+    margin-right: 4vw;
+}
+canvas
+{
+    width: auto;
+    height: auto;
+}
+
+
+/* RECIPE 1 */
+
+.page_mode_button
+{
+    margin:auto;
+    text-transform: uppercase;
+    transition: 0.5s;
+    color: #1f1b1b;
+    background-color: rgb(177, 177, 177);
+    padding: 1em;
+    width: 100%;
+}
+
+
+.modal-read{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid grey;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width:60%;
+    height: auto;
+    padding: 2em;
+    padding-bottom: 3em;
+    text-align: center;
+}
+
+.modal-header-read
+{
+    padding: 1vh, 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+
+.modal-title-read
+{
+    font-size:1.25rem;
+    font-weight: bold;
+    color: grey;
+    padding-left: 1em;
+}
+
+.modal-close-button-read
+{
+    cursor: pointer;
+    background: none;
+    outline: none;
+    padding: 2vh 2vh 2vh 0;
+    margin: 0;
+    width: 1vh;
+    color: black;
+    font-size: 2em;
+    font-weight:  bold;
+}
+.modal-next-button-read
+{
+    cursor: pointer;
+    background: none;
+    outline: none;
+    padding: 2vh 1vh 2vh 0;
+    margin: 0;
+    width: 1vh;
+    color: black;
+    font-size: 1.5em;
+    font-weight:  bold;
+}
+.modal-previous-button-read
+{
+    cursor: pointer;
+    background: none;
+    outline: none;
+    padding: 2vh 1vh 2vh 0;
+    margin: 0;
+    width: 1vh;
+    color: black;
+    font-size: 1.5em;
+    font-weight:  bold;
+}
+.overlay-read
+{
+    position: fixed;
+    opacity: 0;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    pointer-events: none;
+}
+
+.recipe
+{
+    padding:3em;
+}
+
+#secret-recipe-link
+{
+    padding: 2em;
+    float:right;
+}
+
+
+
+
+
+
+
+.modal-pass{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid grey;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width:60%;
+    height: auto;
+    padding: 2em;
+    padding-bottom: 3em;
+    text-align: center;
+}
+
+.modal-header-pass
+{
+    padding: 1vh, 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+
+.modal-title-pass
+{
+    font-size:1.25rem;
+    font-weight: bold;
+    color: grey;
+    padding-left: 1em;
+}
+
+.modal-body-pass
+{
+    padding-top: 2em;
+}
+
+.overlay-pass
+{
+    position: fixed;
+    opacity: 20%;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(250, 0, 0);
+    pointer-events: none;
+}

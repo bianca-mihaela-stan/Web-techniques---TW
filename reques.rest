@@ -1,0 +1,9 @@
+GET http://localhost:5500/users
+###
+
+POST http://localhost:5500/users
+Content-Type: application/json
+{
+    "name": "Kyle",
+    "password" : "1234"
+}

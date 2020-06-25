@@ -52,13 +52,13 @@
             <div class="thumbnail">
                 <img src="chef-icon.png" alt="chef icon">
             </div>
-            <div class="register-form">
-                <input type="text" placeholder="username" id="username">
-                <input type="text" placeholder="password" id="parola">
-                <button>login</button>
-                <p id="adaugare_mail" class="account_specifier">I don't have an account</p>
-                <p id="sterge_mail" class="account_specifier">I already have an account</p>
-            </div>
+            <form class="register-form" action="http://localhost:7000/submit" method="GET">
+                <input type="text" placeholder="username" id="username" name="username">
+                <input type="text" placeholder="password" id="parola" name="parola">
+                <button type="submit">login</button>
+                <br><br>
+                <a id="adaugare_mail" class="account_specifier" href="register.html">I don't have an account</a>
+            </form>
         </section>
         <section id="selectare">
             <p>Selectati o optiune:</p>
@@ -105,7 +105,7 @@
                 <td id="price2">50$/year</td>
             </tr>
         </table>
-        <script src="script.js"></script>
+        <script src="ajax.js"></script>
     </body>
     
 </html>
