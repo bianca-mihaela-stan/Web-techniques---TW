@@ -8,6 +8,8 @@ window.onload =function()
 
     let titles=document.getElementsByTagName("h2");
     let paragraphs=document.getElementsByTagName("p");
+
+    //atribui fiecaruit titlu sau articol un id de tipul box9
     for(let i=0; i<titles.length; i++)
     {
         titles[i].setAttribute("id", "box"+index);
@@ -20,19 +22,16 @@ window.onload =function()
         index++;
     }
 
+    //apelez functia care sa imi ia din localStorage textul marcat
     afiseaza_text_marcat();
 
+    //cand apas tasta f se apeleaza functia veridica_text_marcat
     document.addEventListener("keydown", function(key)
     {
         if(key.keyCode=="70")
         {
             verifica_text_marcat();
         }
-        if(key.keyCode=="69")
-        {
-            elimina_text_marcat();
-        }
-
     });
 
     var btn=document.getElementsByTagName("button")[0];
@@ -131,6 +130,8 @@ window.onload =function()
 
     })
 
+
+    //am butonele de sortare
     var sort_buttons=document.querySelectorAll(".sort-buttons");
     sort_buttons[0].addEventListener("click", function()
     {
@@ -317,30 +318,18 @@ function selectare_figures()
 }
 
 
-// function sortare_dupa_culoare()
-// {
-//     var figures=document.querySelectorAll("figure");
-//     var swap = function (x){return x};
-//     for(i=0; i<figures.length; i++)
-//     {
-//         for(j=i+1; j<figures.length; j++)
-//         {
-//             var a=figures[i];
-//             var b=figures[j];
-//             var imga=a.querySelector("img");
-//             var imgb=b.querySelector("img");
-//             //calculare_avg_culori
-//         }
-//     } 
-// }
-
 function calculare_avg_culori()
 {
     var lista_culori=new Array();
     var figures=document.querySelectorAll("figure");
+
+    //iau toate imaginile
     var images=document.querySelectorAll("figure img");
-    console.log(images);
+
+    //am un canvas ascuns in document
     var canvas=document.querySelector("canvas");
+    
+    //trec prin toate imaginile
     for(i=0; i<images.length; i++)
     {
         var c=canvas.getContext('2d');
@@ -349,15 +338,19 @@ function calculare_avg_culori()
         c.width=images[i].width;
         c.width=images[i].height;
         c.drawImage(images[i], 0,0, canvas.width, canvas.height);
+
+        //iau datele despre imagine( datele despre fiecare pixel)
         var img_data=c.getImageData(0, 0, canvas.width, canvas.height);
         var data=img_data.data;
+
+        //din aceste imagini ma intereseaza red, green, blue
         var red=0;
         var green=0;
         var blue=0;
-        var count=0;
+        var count=0;//count e numarul de pixeli
         
         
-
+        //adun gradul de rosu, verde si albastru din fiecare pixel
        for(j=0; j<data.length; j+=4)
        {
             red+=data[j];
@@ -365,21 +358,14 @@ function calculare_avg_culori()
             blue+=data[j+2];
             count++;
        }
-       //console.log("rgb("+Math.floor(red/count)+","+Math.floor(green/count)+","+Math.floor(blue/count)+")");
-       lista_culori_canonice=["rgb(255,0,0)", "rgb(150,75,0)", "rgb(255,140,0)", "rgb(255,255,0)", "rgb(0,255,0)", "rgb(0,0,255)", "rgb(75,0,130)"]
+       
+       //lista asta nu face nimic dar e de referinta: am luat rosu, galben, verde, albastru ca culori canonice
+       lista_culori_canonice=["rgb(255,0,0)","rgb(255,255,0)", "rgb(0,255,0)", "rgb(0,0,255)"];
+       
+       //calculez distante pana la culoarea de referinta
        var a1=Math.abs(255-Math.floor(red/count));
        var b1=Math.abs(0-Math.floor(green/count));
        var c1=Math.abs(0-Math.floor(blue/count));
-
-
-       var a2=Math.abs(150-Math.floor(red/count));
-       var b2=Math.abs(75-Math.floor(green/count));
-       var c2=Math.abs(0-Math.floor(blue/count));
-
-
-       var a3=Math.abs(255-Math.floor(red/count));
-       var b3=Math.abs(140-Math.floor(green/count));
-       var c3=Math.abs(0-Math.floor(blue/count));
 
        var a4=Math.abs(255-Math.floor(red/count));
        var b4=Math.abs(255-Math.floor(green/count));
@@ -392,69 +378,46 @@ function calculare_avg_culori()
 
 
        var a6=Math.abs(0-Math.floor(red/count));
-       var b6=Math.abs(255-Math.floor(green/count));
+       var b6=Math.abs(0-Math.floor(green/count));
        var c6=Math.abs(255-Math.floor(blue/count));
 
-       var a7=Math.abs(75-Math.floor(red/count));
-       var b7=Math.abs(0-Math.floor(green/count));
-       var c7=Math.abs(130-Math.floor(blue/count));
-
-       var minn=Math.min(a1+b1+c1, a2+b2+c2, a3+b3+c3, a4+b4+c4, a5+b5+c5, a6+b6+c6, a7+b7+c7);
        var minn=Math.min(a1+b1+c1, a4+b4+c4, a5+b5+c5, a6+b6+c6);
 
-
+       //unde distanta e minima inseamna ca culoarea accea reprezinta cel mai bine imaginea
        if(a1+b1+c1==minn)
        {
            lista_culori.push({culoare: "rgb(255,0,0)", figura: figures[i]});
        }
-    //    if(a2+b2+c2==minn)
-    //    {
-    //     lista_culori.push({culoare: "rgb(150,75,0)", figura: figures[i]});
-    //    }
-    //    if(a3+b3+c3==minn)
-    //    {
-    //     lista_culori.push({culoare: "rgb(255,140,0)", figura: figures[i]});
-    //    }
        if(a4+b4+c4==minn)
        {
         lista_culori.push({culoare: "rgb(255,255,0)", figura: figures[i]});
-           //console.log(4);
        }
        if(a5+b5+c5==minn)
        {
         lista_culori.push({culoare: "rgb(0,255,0)", figura: figures[i]});
-           //console.log(5);
        }
        if(a6+b6+c6==minn)
        {
         lista_culori.push({culoare: "rgb(0,0,255)", figura: figures[i]});
-           //console.log(6);
        }
-    //    if(a7+b7+c7==minn)
-    //    {
-    //     lista_culori.push({culoare: "rgb(75,0,130)", figura: figures[i]});
-    //        //console.log(7);
-    //    }
     }
-    return lista_culori;
+    return lista_culori;//lista_culori[i] = culoarea corespunzato
 }
 
 
 function sortare_dupa_culoare()
 {
+    //in primul rand trebuie sa calculez culoarea average a fiecarei poze
     var lista=calculare_avg_culori();
+
     var figure=document.getElementsByTagName("figure");
     var new_figures=[];
-    console.log(lista);
-    var p=0;
-    for(i=0; i<lista.length; i++)
+    for(i=0; i<lista.length; i++)//merg prin lista de culori
     {
-
         if(lista[i].culoare=="rgb(255,0,0)")
         {
+            //mut figura asta la final
             put(lista[i].figura);
-            console.log(lista[i].culoare);
-            p++;
         }
     }
     for(i=0; i<lista.length; i++)
@@ -462,8 +425,6 @@ function sortare_dupa_culoare()
         if(lista[i].culoare=="rgb(255,255,0)")
         {
             put(lista[i].figura);
-            console.log(lista[i].culoare);
-            p++;
         }
     }
     for(i=0; i<lista.length; i++)
@@ -471,8 +432,6 @@ function sortare_dupa_culoare()
         if(lista[i].culoare=="rgb(0,255,0)")
         {
             put(lista[i].figura);
-            console.log(lista[i].culoare);
-            p++;
         }
     }
     for(i=0; i<lista.length; i++)
@@ -480,8 +439,6 @@ function sortare_dupa_culoare()
         if(lista[i].culoare=="rgb(0,0,255)")
         {
             put(lista[i].figura);
-            console.log(lista[i].culoare);
-            p++;
         }
     }
 }
@@ -492,14 +449,12 @@ function sortare_dupa_culoare()
 
 function sortare_dupa_titlu()
 {
-    console.log("title");
+    //iau figurile
     var figures=document.querySelectorAll("figure");
-    console.log(Array.from(figures));
-    
+    //le transform in array ca erau NodeList si sortez dupa o functie de comparare
     var new_figures=(Array.from(figures)).sort(
         function(a, b)
         {
-            console.log(a.querySelector("h2").innerText, b.querySelector("h2").innerText);
             if(a.querySelector("h2").innerText<b.querySelector("h2").innerText)
                 {
                     return false;
@@ -507,21 +462,19 @@ function sortare_dupa_titlu()
             return true;
         }
     );
-    console.log(new_figures);
 
 
     for(let i=0; i<new_figures.length; i++)
     {
         put(new_figures[i]);
     }
-    console.log("done title");
     
 }
 
 function sortare_dupa_taguri()
 {
     var figures=document.querySelectorAll("figure");
-
+    //sortez figurile dupa o fucntie de comparatie
     var new_figures=Array.from(figures).sort(
         function(a, b)
         {
@@ -546,6 +499,7 @@ function sortare_dupa_toate()
 {
     var lista=calculare_avg_culori();
     var figure=document.getElementsByTagName("figure");
+    //pun figurile in 4 array-uri diferite, una pentru fiecare culoare
     var rosu=[];
     var galben=[];
     var verde=[];
@@ -580,15 +534,15 @@ function sortare_dupa_toate()
         }
     }
 
-
+    //le sortez pe toate dupa acelasi functie de comparatie
     rosu.sort(
         function(a, b)
         {
-            if(a.querySelectorAll("button").length>b.querySelectorAll("button").length)
+            if(a.querySelectorAll("button").length>b.querySelectorAll("button").length)//mai intai compa dupa numarul de taguri
                 return 0;
             else if((a.querySelectorAll("button").length==b.querySelectorAll("button").length))
             {
-                if(a.querySelector("h2").innerText<b.querySelector("h2").innerText)
+                if(a.querySelector("h2").innerText<b.querySelector("h2").innerText)//apoi dupa titlu
                     return 0;
                 return 1;
             }
@@ -670,32 +624,51 @@ function put(x)
 
 function verifica_text_marcat()
 {
-    sel = window.getSelection();
-    console.log(sel.anchorNode, sel.anchorOffset, sel.focusOffset);
-    if (sel.rangeCount) 
+    sel = window.getSelection();//imi returneaza date despre selectia din pagina
+
+    //anchorNode = nodul in care apare selectia
+    //anchorOffset = numarul de caractere de la inceputul nodului anchor pana la selectie
+
+    //focusNode = nodul unde se termina selectia
+    //focusOffset = numarul de caractere de la inceputul nodului focus pana la selectie
+
+    //rangeCount = numarul de selectii care s-au facut in pagina
+
+    if (sel.rangeCount)//daca s-a facut o selectie
     {
-        let replacementText=sel.toString();
-        console.log(replacementText);
+        let replacementText=sel.toString();//iau textul care a fost selectat
+
+        //returneaza un range object care incepe de la 0
         range = sel.getRangeAt(0);
+
         range.deleteContents();
-        console.log(range);
+
+        //fac un element de tip mark
         let replacement_node=document.createElement("mark");
         replacement_node.innerText=replacementText;
+
+        //ii schimb culoarea textului (asa scria in cerinta)
+        replacement_node.style.color="green";
+
+        //inserez in range noul nod
         range.insertNode(replacement_node);
 
+        //apoi ma apuc de salvarea in localStorage
         if(localStorage.getItem("saved_text")===null)
         {
             localStorage["saved_text"] = "[]";
         }
+
+        //fac obiectul care va fi salvat
         let obj=
         {
-            nod: sel.anchorNode.parentNode.id,
-            text: sel.anchorNode.parentNode.innerHTML
+            nod: sel.anchorNode.parentNode.id,//iau id-ul : box9
+            text: sel.anchorNode.parentNode.innerHTML// si textul din tot box-ul
         }
-        console.log(obj);
 
         let ok=0;
         let saved_texts=JSON.parse(localStorage["saved_text"]);
+        //caut prin localStorage sa vad daca mai e vreo versiunea a acestui articol deja acolo
         for(let i=0; i<saved_texts.length; i++)
         {
             if(saved_texts[i].nod==sel.anchorNode.parentNode.id)
@@ -705,11 +678,13 @@ function verifica_text_marcat()
                 }
         }
 
+        //daca nu am mai avut selectii in acest articol fac push la lista
         if(ok==0)
         {
             saved_texts.push(obj);
         }
 
+        //pun lista inapoi in localStorage
         localStorage["saved_text"]=JSON.stringify(saved_texts);
     
     }
@@ -720,25 +695,17 @@ function verifica_text_marcat()
 
 function afiseaza_text_marcat()
 {
+    //daca am vreun text salvat in localStorage
     if(localStorage["saved_text"]!=null)
     {
         console.log(localStorage["saved_text"])
         let saved_texts=JSON.parse(localStorage["saved_text"]);
+
+        //inlocuiesc textul din box9 cu textul salvat pentru box9
         for(let i=0; i<saved_texts.length; i++)
         {
             let box=document.getElementById(saved_texts[i].nod);
             box.innerHTML=saved_texts[i].text;
         }
     }
-}
-
-
-function elimina_text_marcat()
-{
-    
-}
-
-function preprocesare(text)
-{
-
 }
