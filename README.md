@@ -1,4 +1,33 @@
 # Site-TW
+ 
+### TASK-uri
+
+### Task 22, nivel 3 - 1,5p
+Pagina codificata, protejata prin parola. Una dintre paginile site-ului va avea continut protejat, in sensul ca la intrarea pe pagina utilizatorul va vedea textul codificat in felul urmator: fiecare caracter afisabil din fiecare element din main (continutul paginii fara partile de header si footer) va fi inlocuit prin program cu caracterul avand codul ASCII cu 3 mai mare, de exemplu, a va fi inlocuit cu d, b cu e, e cu f etc. Pentru a vizualiza continutul corect al paginii utilizatorului i se va cere o parola. Parola se va cere prin intermediul unui input aflat la inceputul paginii. Parola va egala cu aa#zz#ll, unde aa sunt ultimele doua cifre ale anului curent, zz reprezinta ziua curenta, ll reprezinta luna curenta (in cazul in care numarul zilei sau al lunii e sub 10 se adauga un 0 in fata, de exemplu 5 devine 05). Dupa ce se introduce parola si se apasa enter, textul se schimba in cel corect.
+
+unde? in pagina `secret_recipe.html`
+
+### Task 3, nivel 4 - 2p
+Sa sorteze/filtreze/grupeze elementele unui tabel (sau afisaj tabelar, precum grid) dupa minim 3 criterii complexe. Studentul isi poate alege singur cerintele insa trebuie sa fie la nivelul de dificultate al cerintelor de mai jos (e bine sa se sfatuiasca cu profesorul de laborator in legatura cu asta). 
+Am sortat articolele de pe blog dupa:
+- culoarea generala a imaginii ce corespunde articolului
+- titlul aticolului
+- numarul de tag-uri ale articolului
+
+unde? in pagina `blog.html`
+
+### Task 4, nivel 4 - 2p
+Posibilitatea de a marca portiuni din text (asa cum se face cu markerul pe un text tiparit) si salvarea acelor marcaje in localStorage pentru a le gasi in aceeasi forma la reintrarea in pagina. Zonele marcate ar aparea cu o culoare de background si de text diferita. Marcajul se face selectand textul (pentru simplitate se va marca doar text care nu contine alte taguri, precum elemente b, i, a, etc) si apoi apasand o combinatie de taste care sa salveze textul ca fiind marcat (se va inlocui bucata de text cu un element de tip <mark> avand contintul egal cu cel al textului selectat). Indicatii: la mouseup, sau keyup se verifica daca e vreun text selectat cu window.getSelection() si document.selection.createRange().text. Mai multe informatii utile la: https://javascript.info/selection-range
+    
+unde? in pagina `blog.html`
+    
+### Task 5, nivel 4 - 2p
+(site descriptiv) Pentru sectiunile cu mai mult text (lungime peste N cuvinte, de exemplu N=500)  sa existe un buton numit "Page mode". La click pe el, in locul sectiunii, se va afisa un div in care se vad primele 100 de cuvinte din text, iar la finalul acestui div se va afisa pagina 1/NrPag. Vor exista butoane de next si previous page. La click pe next, utilizatorul poate sa vada urmatoarele 100 de cuvinte din text (trebuie sa se sectioneze textul la nivel de blank character, nu in mijlocul cuvantului). Daca nu face click pe next, oricum dupa k secunde prin program se trece la urmatoarea "pagina", si actiunea se continua, oprindu-se cand se ajunge la final. Utilizatorul poate sa iasa oricand din "Page mode", facand click pe un buton de dezactivare. Efectul acesta trebuie sa se aplice pe minim 2 sectiuni, dar fara repetarea codului (fara copy-paste, ci refolosind acelasi cod).
+
+unde? paginile: `recipe1.html`, `recipe2.html`, `secret_recipe.html`
+
+
+
 
 ### Partea de JS
 
