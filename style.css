@@ -802,15 +802,13 @@ canvas
 
 
 .modal-pass{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border: 1px solid grey;
     border-radius: 10px;
     z-index: 10;
     background-color: white;
     width:60%;
+    margin: auto;
+    margin-bottom: 5em;
     height: auto;
     padding: 2em;
     padding-bottom: 3em;
