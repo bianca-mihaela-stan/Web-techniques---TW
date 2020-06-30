@@ -1,5 +1,7 @@
 # Web-techniques
 
+1st year, 2nd semester
+
 <p>
 <img src="resources/site-tw.gif" width=75%>
 </p>
