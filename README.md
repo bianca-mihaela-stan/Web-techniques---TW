@@ -1,7 +1,7 @@
 # Web-techniques
 
 <p>
-<img src="site-tw.gif" width=75%>
+<img src="resources/site-tw.gif" width=75%>
 </p>
 
 ## Assignment 1 : HTML and CSS
