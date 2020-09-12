@@ -1,4 +1,4 @@
-# Web-techniques
+# Web-techniques --- lab Cheptea Daniela
 
 1st year, 2nd semester
 
