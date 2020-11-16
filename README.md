@@ -1,6 +1,6 @@
-# Web-techniques --- lab Cheptea Daniela
+# Web-techniques
 
-1st year, 2nd semester
+1st year, 2nd semester, lab taught by Cheptea Daniela
 
 <p>
 <img src="resources/site-tw.gif" width=75%>
